@@ -3,10 +3,13 @@ botaoAdicionar.addEventListener("click", function(event) {
     event.preventDefault();
 
     var form = document.querySelector("#form-adiciona");
-
     var paciente = obtemPacienteDoFormulario(form);
-
     var pacienteTr = montaTr(paciente);
+
+    if (!validaPaciente(paciente)) {
+        console.log("Paciente inválido");
+        return;
+    }
 
     var tabela = document.querySelector("#tabela-pacientes");
 
@@ -49,4 +52,12 @@ function montaTd(dado,classe){
   td.classList.add(classe);
 
   return td;
+}
+
+function validaPaciente(paciente) {
+    if (validaPeso(paciente.peso)) {
+        return true;
+    } else {
+        return false;
+    }
 }
