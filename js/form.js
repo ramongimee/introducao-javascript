@@ -19,6 +19,9 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     form.reset();
 
+    var mensagensErro = document.querySelector("#mensagens-erro");
+    mensagensErro.innerHTML = "";
+
 });
 
 function obtemPacienteDoFormulario(form){
